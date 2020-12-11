@@ -4,11 +4,15 @@ on: [push]
 jobs:
   test-run:
     runs-on: ubuntu-latest
+    container:
+      image: archlinux
+      options: --privileged
+      volumes:
+        - /sys/fs/cgroup:/sys/fs/cgroup
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build Arch Linux Kernel package
-        uses: 2m/arch-pkgbuild-builder@v1.16
+      - name: Build Arch Linux package
+        uses: FFY00/build-arch-package@v1
         with:
-          target: 'pkgbuild'
-          pkgname: 'build'
+          PKGBUILD: $GITHUB_WORKSPACE/build/PKGBUILD
