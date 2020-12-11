@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-pkgbase=linux
+pkgbase=linux-RyzenBook
 pkgver=5.9.13.arch1
 pkgrel=1
 pkgdesc='Linux'
