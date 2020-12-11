@@ -12,6 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Arch Linux Kernel package
-        uses: FFY00/build-arch-package@master
-        with:
-          PKGBUILD: $GITHUB_WORKSPACE/PKGBUILD
+        run: makepkg -s
