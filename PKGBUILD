@@ -53,7 +53,7 @@ prepare() {
 
   echo "Setting config..."
   cp ../config .config
-  #make olddefconfig
+  make olddefconfig
   make prepare
 
   make -s kernelrelease > version
