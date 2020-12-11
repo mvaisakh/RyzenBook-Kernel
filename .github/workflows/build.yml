@@ -11,4 +11,4 @@ jobs:
         uses: 2m/arch-pkgbuild-builder@v1.16
         with:
           target: 'pkgbuild'
-          pkgname: '$GITHUB_WORKSPACE'
+          pkgname: 'build'
