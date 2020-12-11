@@ -29,8 +29,8 @@ sha256sums=('SKIP'
             'cf69b81648a07ebedb274ed26bed3c4d2ff75c6665ecaca0a724b148c70c9c7c'
             '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c')
 
-export KBUILD_BUILD_HOST=archlinux
-export KBUILD_BUILD_USER=$pkgbase
+export KBUILD_BUILD_HOST=RyzenBook
+export KBUILD_BUILD_USER=mvaisakh
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
 prepare() {
@@ -52,7 +52,8 @@ prepare() {
 
   echo "Setting config..."
   cp ../config .config
-  make olddefconfig
+  #make olddefconfig
+  make prepare
 
   make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
