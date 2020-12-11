@@ -4,12 +4,11 @@ on: [push]
 jobs:
   test-run:
     runs-on: ubuntu-latest
-    container:
-      image: archlinux
-      options: --privileged
-      volumes:
-        - /sys/fs/cgroup:/sys/fs/cgroup
+
     steps:
       - uses: actions/checkout@v2
       - name: Build Arch Linux Kernel package
-        run: makepkg -s
+        uses: 2m/arch-pkgbuild-builder@v1.16
+        with:
+          target: 'pkgbuild'
+          pkgname: '$GITHUB_WORKSPACE'
